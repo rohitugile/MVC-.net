@@ -1,0 +1,40 @@
+﻿@model List<Synechron.EventsPortal.Models.Event>
+@{
+    ViewBag.Title = "Events";
+}
+
+<h2>Events</h2>
+<table class="table table-bordered table-responsive-lg table-striped" >
+    <thead>
+        <tr>
+            <th>Event ID</th>
+            <th>Event Code</th>
+            <th>Event Name</th>
+            <th>Description</th>
+            <th>Start Date</th>
+            <th>End Date</th>
+            <th>Fees</th>
+            <th>Total Seats</th>
+            <th>Available Seats</th>
+            <th>Logo</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var myEvent in Model)
+        {
+            <tr>
+                <td>@myEvent.event_id</td>
+                <td>@myEvent.event_code</td>
+                <td>@myEvent.event_name</td>
+                <td>@myEvent.event_description</td>
+                <td>@myEvent.event_startDate.ToString("yyyy-MM-dd HH:mm:ss")</td>
+                <td>@myEvent.event_endDate.ToString("yyyy-MM-dd HH:mm:ss")</td>
+                <td>@myEvent.event_fees.ToString("C")</td>
+                <td>@myEvent.event_totalSeats</td>
+                <td>@myEvent.event_availableSeats</td>
+                <td>@myEvent.event_logo</td>
+            </tr>
+        }
+    </tbody>
+</table>
+

@@ -1,0 +1,52 @@
+﻿@model List<Synechron.EventsPortal.Models.Employee>
+@{
+    ViewBag.Title = "Employees";
+}
+
+<h2>Employees</h2>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Employee List</title>
+</head>
+<body>
+    <h1>Employee List</h1>
+
+    <table border="1" class="table table-striped table-responsive-lg table-bordered"
+           >
+        <thead>
+            <tr>
+                <th>Employee ID</th>
+                <th>Name</th>
+                <th>Address</th>
+                <th>City</th>
+                <th>Zip Code</th>
+                <th>Country</th>
+                <th>Phone</th>
+                <th>Email</th>
+                <th>Skillsets</th>
+                <th>Avatar</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var employee in Model)
+            {
+                <tr>
+                    <td>@employee.employee_ID</td>
+                    <td>@employee.employee_name</td>
+                    <td>@employee.employee_address</td>
+                    <td>@employee.employee_city</td>
+                    <td>@employee.employee_zipcode</td>
+                    <td>@employee.employee_country</td>
+                    <td>@employee.employee_phone</td>
+                    <td>@employee.employee_email</td>
+                    <td>@employee.employee_skillsets</td>
+                    <td>@employee.employee_avatar</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</body>
+</html>
+
